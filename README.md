@@ -29,17 +29,22 @@ In DESeq2, it's assumed that genes of similar average expression strength have s
 ### How EdgeR works?
 **Normalization**
 
-edgeR utilizes a weighted trimmed mean of the log expression ratios between samples for normalization. This approach accounts for differences in sequencing depth between samples and ensures that expression values are comparable across samples.
+- edgeR utilizes a weighted trimmed mean of the log expression ratios between samples for normalization. This approach accounts for differences in sequencing depth between samples and ensures that expression values are comparable across samples.
 
 **Modeling the Data**
 
-The data are modeled as negative binomial (NB) distributed. Notably, the NB distribution reduces to Poisson when dispersion equals zero.
+- The data are modeled as negative binomial (NB) distributed. Notably, the NB distribution reduces to Poisson when dispersion equals zero.
 
 **Dispersion Estimation**
 
-edgeR estimates gene-wise dispersions by conditional maximum likelihood, conditioning on the total count for each gene. An empirical Bayes procedure is then applied to shrink the dispersions towards a consensus value. This procedure effectively borrows information between genes, leading to more stable dispersion estimates.
+- edgeR estimates gene-wise dispersions by conditional maximum likelihood, conditioning on the total count for each gene. An empirical Bayes procedure is then applied to shrink the dispersions towards a consensus value. This procedure effectively borrows information between genes, leading to more stable dispersion estimates.
 
 **Differential Expression Analysis**
 
-Differential expression is assessed for each gene using an exact test analogous to Fisher's exact test. However, this test is adapted for overdispersed data, making it suitable for the negative binomial distribution used in edgeR.
+- Differential expression is assessed for each gene using an exact test analogous to Fisher's exact test. However, this test is adapted for overdispersed data, making it suitable for the negative binomial distribution used in edgeR.
+
+## REFERENCES
+1. Love, M.I., Huber, W. & Anders, S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550 (2014). https://doi.org/10.1186/s13059-014-0550-8 (https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8#citeas).
+2. Robinson MD, McCarthy DJ, Smyth GK. edgeR: a Bioconductor package for differential expression analysis of digital gene expression data. bioinformatics. 2010 Jan 1;26(1):139-40. (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2796818/).
+
 

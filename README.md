@@ -14,7 +14,7 @@ The goal of differential expression testing is to determine which genes are expr
 2. The purpose of the intercept column in the design matrix could be helpful for understanding its role in the modeling process.
 
 <p align="center">
-  <img src="images/DESeq2.png" width="400" height="300" alt="Alt Text">
+  <img src="images/DESeq2.png" width="500" height="200" alt="Alt Text">
 </p>
 
 **STEP3 - Dispersion Estimation**

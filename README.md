@@ -26,7 +26,7 @@ In DESeq2, it's assumed that genes of similar average expression strength have s
 3. _Final Dispersion Estimate_: Form a logarithmic posterior for the dispersion and use its maximum (MAP value) as the final estimate of the dispersion.
 
 # EdgeR
-
+### How EdgeR works?
 **Normalization**
 
 edgeR utilizes a weighted trimmed mean of the log expression ratios between samples for normalization. This approach accounts for differences in sequencing depth between samples and ensures that expression values are comparable across samples.

@@ -13,7 +13,12 @@ The goal of differential expression testing is to determine which genes are expr
 1. For categorical variables or factors with two or more levels, DESeq2 utilizes expanded design matrices. This includes an indicator variable for each level of each factor, in addition to an intercept column. This allows for a more comprehensive modeling of the data.
 2. The purpose of the intercept column in the design matrix could be helpful for understanding its role in the modeling process.
 
+<p align="center">
+  <img src="images/DESeq2.png" width="400" height="300" alt="Alt Text">
+</p>
+
 **STEP3 - Dispersion Estimation**
+
 In DESeq2, it's assumed that genes of similar average expression strength have similar dispersion. Dispersion estimation is crucial for accurately modeling the variance of gene expression counts across samples.
 
 1. _Gene-wise Dispersion_: Begin by fitting a negative binomial GLM, which provides a rough method-of-moments estimate of dispersion based on within-group variances and means. This accounts for variability in gene expression levels across different conditions.
